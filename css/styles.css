@@ -107,7 +107,7 @@ section {
 
 .carousel-container {
     overflow: hidden;
-    width: 60%; /* Занимает 50% ширины экрана */
+    width: 85%; /* Занимает 50% ширины экрана */
     margin: 0 auto; /* Центрирование по горизонтали */
 }
 
@@ -120,16 +120,15 @@ section {
 
 .carousel-item {
     flex: 0 0 100%;
-    /* padding: 20px; */
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 .carousel-item.active {
-    display: flex; /* Показываем только активный элемент */
-    transform: translateY(0); /* Сбрасываем вертикальное смещение для активного элемента */
-    opacity: 1; /* Сбрасываем прозрачность для активного элемента */
+    display: flex; /* Show only active element */
+    transform: translateY(0); /* Reset vertical bias for active element */
+    opacity: 1; /* Reset transparency for active element */
 }
 
 .carousel-navigation {
@@ -143,7 +142,6 @@ section {
     padding: 15px;
     cursor: pointer;
     margin: 0 150px;
-
     background-color: #f0f0f0;
     border: none;
     border-radius: 100%;
