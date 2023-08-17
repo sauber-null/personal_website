@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Connecting styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Connecting icons -->
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.3.3/dist/scrollreveal.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Language flags -->
+        <div id="language-flags">
+            <a href="../index.html" title="German"><img src="../images/de_flag.png" alt="German Flag"></a>
+        </div>
+        <h1 class="centered-head">Dmytro Zahoruiko</h1>
+        <p class="header-text">Data Scientist/Machine Learning Engineer</p>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about" class="section">
+            <h2>About me</h2>
+            <p>Hi! I am Data Scientist/Machine Learning Engineer</p>
+            <img src="../images/_DSC5336.jpg" alt="My photo" class="photo">
+        </section>
+        <section id="portfolio" class="carousel-section">
+            <h2>Portfolio</h2>
+            <div class="carousel-navigation">
+                <button class="prev-button">
+                    <i class="fa-solid fa-arrow-left fa-xl"></i>
+                </button>
+                <button class="next-button">
+                    <i class="fa-solid fa-arrow-right fa-xl"></i>
+                </button>
+                <div class="carousel-container">
+                    <div class="carousel-list">
+                        <div class="carousel-item animated-section">
+                            <div class="project">
+                                <h3>Project 1</h3>
+                                <p>Project 1 Description...</p>
+                                <div class='tableauPlaceholder' id='viz1692096341366' style='position: relative'><noscript><a
+                                    href='#'><img alt='Sales by Day of the Month, Sum and Count '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='site_root' value='' />
+                                        <param name='name' value='GodniyShmot&#47;SalesbyDayoftheMonthSumandCount' />
+                                        <param name='tabs' value='no' />
+                                        <param name='toolbar' value='yes' />
+                                        <param name='static_image'
+                                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='language' value='en-US' />
+                                    </object></div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1692096341366'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '95%'; vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
+                        </div>
+                        <div class="carousel-item animated-section">Project 2</div>
+                        <div class="carousel-item animated-section">Project 3</div>
+                        <div class="carousel-item animated-section">Project 4</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contacts</h2>
+            <p>Reach me via e-mail: <a href="mailto:d.zahoruiko@web.de">d.zahoruiko@web.de</a></p>
+            <p>Follow me in Social Media: <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a></p>
+        </section>
+    </main>
+<footer>
+        <p>&copy; 2023 Dmytro Zahoruiko</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".animated-section");
+            let currentIndex = 0;
+            let loading = false;
+
+            function showNextSection() {
+                if (currentIndex < sections.length) {
+                    sections[currentIndex].style.opacity = "1";
+                    sections[currentIndex].style.transform = "translateY(0)";
+                    currentIndex++;
+                    loading = false;
+                }
+            }
+
+            function handleScroll() {
+                if (!loading && currentIndex < sections.length) {
+                    const lastSection = sections[currentIndex - 1];
+                    const lastSectionBottom = lastSection.offsetTop + lastSection.clientHeight;
+                    const triggerPoint = window.innerHeight;
+
+                    if (lastSectionBottom - triggerPoint <= window.scrollY) {
+                        loading = true;
+                        showNextSection();
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+
+            showNextSection();
+        });
+
+        // left-right buttons:
+        // left-right buttons:
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector(".carousel-list");
+            const carouselItems = document.querySelectorAll(".carousel-item");
+            const prevButton = document.querySelector(".prev-button");
+            const nextButton = document.querySelector(".next-button");
+
+            let currentIndex = 0;
+
+            function showCurrentSlide() {
+                // carouselItems.forEach((item, index) => {
+                //     if (index === currentIndex) {
+                //         item.classList.add("active");
+                //     } else {
+                //         item.classList.remove("active");
+                //     }
+                // });
+            }
+
+            function showNextSlide() {
+                currentIndex = (currentIndex + 1) % carouselItems.length;
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Прокрутка к следующему элементу
+            }
+
+            function showPrevSlide() {
+                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Прокрутка к предыдущему элементу
+            }
+
+            prevButton.addEventListener("click", showPrevSlide);
+            nextButton.addEventListener("click", showNextSlide);
+
+            // Показать первый слайд при загрузке страницы
+            showCurrentSlide();
+        });
+    </script>
+    
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6e6e6;
+    color: #000000;
+    /* background-image: url('../images/_DSC5336.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+header {
+    position: relative;
+    background-color: #ffffff00;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.header-text {
+    margin-top: 100px;
+}
+
+.photo {
+    max-width: 300px;
+
+}
+
+.centered-head {
+    position: absolute; /* Устанавливаем позицию как абсолютную */
+    top: 50%; /* Позиционируем заголовок по вертикали */
+    left: 50%; /* Позиционируем заголовок по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем по обеим осям */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Flags styles */
+#language-flags {
+    float: right;
+    margin-top: 1rem;
+}
+
+/* Flags pics styles */
+#language-flags img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Sections styles */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-centered-section {
+    /* display: flex; */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    min-height: 100vh; /* Минимальная высота, чтобы секция была по центру экрана */
+}
+
+.animated-section:first-child {
+    display: block; /* Show only the first section */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c8c8c8bb;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Section styles */
+section {
+    /* width: 500px; */
+    padding: 2rem;
+    text-align: center;
+}
+
+.carousel-section {
+    /* width: 500px; */
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 60%; /* Занимает 50% ширины экрана */
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.carousel-list {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-item.active {
+    display: flex; /* Показываем только активный элемент */
+    transform: translateY(0); /* Сбрасываем вертикальное смещение для активного элемента */
+    opacity: 1; /* Сбрасываем прозрачность для активного элемента */
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.prev-button, .next-button {
+    padding: 15px;
+    cursor: pointer;
+    margin: 0 150px;
+
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 100%;
+}
+
+/* .prev-button i, .next-button i {
+    margin-right: 5px;
+} */
+
+.next-button {
+    order: 3;
+}
+
+/* Portfolio styles */
+.project {
+    margin-bottom: 2rem;
+}
+
+.project img {
+    max-width: 100%;
+}
+
+/* Contact styles */
+#contact {
+    background-color: rgba(255, 178, 126, 0.75);
+    color: #000000;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#contact a {
+    color: #000000;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #00000000;
+}
