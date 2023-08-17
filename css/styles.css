@@ -101,7 +101,7 @@ section {
 }
 
 .carousel-section {
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
 }
 
@@ -120,7 +120,7 @@ section {
 
 .carousel-item {
     flex: 0 0 100%;
-    padding: 20px;
+    /* padding: 20px; */
     justify-content: center;
     align-items: center;
     text-align: center;
