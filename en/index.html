@@ -43,7 +43,7 @@
                 </button>
                 <div class="carousel-container">
                     <div class="carousel-list">
-                        <div class="carousel-item animated-section">
+                        <div class="carousel-item">
                             <div class="project">
                                 <h3>Project 1</h3>
                                 <p>Project 1 Description...</p>
@@ -70,9 +70,9 @@
                                     var divElement = document.getElementById('viz1692096341366'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '95%'; vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                             </div>
                         </div>
-                        <div class="carousel-item animated-section">Project 2</div>
-                        <div class="carousel-item animated-section">Project 3</div>
-                        <div class="carousel-item animated-section">Project 4</div>
+                        <div class="carousel-item">Project 2</div>
+                        <div class="carousel-item">Project 3</div>
+                        <div class="carousel-item">Project 4</div>
                     </div>
                 </div>
             </div>
@@ -83,41 +83,41 @@
             <p>Follow me in Social Media: <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a></p>
         </section>
     </main>
-<footer>
+    <footer>
         <p>&copy; 2023 Dmytro Zahoruiko</p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sections = document.querySelectorAll(".animated-section");
-            let currentIndex = 0;
-            let loading = false;
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const sections = document.querySelectorAll(".animated-section");
+        //     let currentIndex = 0;
+        //     let loading = false;
 
-            function showNextSection() {
-                if (currentIndex < sections.length) {
-                    sections[currentIndex].style.opacity = "1";
-                    sections[currentIndex].style.transform = "translateY(0)";
-                    currentIndex++;
-                    loading = false;
-                }
-            }
+        //     function showNextSection() {
+        //         if (currentIndex < sections.length) {
+        //             sections[currentIndex].style.opacity = "1";
+        //             sections[currentIndex].style.transform = "translateY(0)";
+        //             currentIndex++;
+        //             loading = false;
+        //         }
+        //     }
 
-            function handleScroll() {
-                if (!loading && currentIndex < sections.length) {
-                    const lastSection = sections[currentIndex - 1];
-                    const lastSectionBottom = lastSection.offsetTop + lastSection.clientHeight;
-                    const triggerPoint = window.innerHeight;
+        //     function handleScroll() {
+        //         if (!loading && currentIndex < sections.length) {
+        //             const lastSection = sections[currentIndex - 1];
+        //             const lastSectionBottom = lastSection.offsetTop + lastSection.clientHeight;
+        //             const triggerPoint = window.innerHeight;
 
-                    if (lastSectionBottom - triggerPoint <= window.scrollY) {
-                        loading = true;
-                        showNextSection();
-                    }
-                }
-            }
+        //             if (lastSectionBottom - triggerPoint <= window.scrollY) {
+        //                 loading = true;
+        //                 showNextSection();
+        //             }
+        //         }
+        //     }
 
-            window.addEventListener("scroll", handleScroll);
+        //     window.addEventListener("scroll", handleScroll);
 
-            showNextSection();
-        });
+        //     showNextSection();
+        // });
 
         // left-right buttons:
         // left-right buttons:
@@ -130,30 +130,53 @@
             let currentIndex = 0;
 
             function showCurrentSlide() {
-                // carouselItems.forEach((item, index) => {
-                //     if (index === currentIndex) {
-                //         item.classList.add("active");
-                //     } else {
-                //         item.classList.remove("active");
-                //     }
-                // });
+                carouselItems.forEach((item, index) => {
+                    if (index === currentIndex) {
+                        item.classList.add("active");
+                    } else {
+                        item.classList.remove("active");
+                    }
+                });
             }
 
-            function showNextSlide() {
-                currentIndex = (currentIndex + 1) % carouselItems.length;
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Прокрутка к следующему элементу
+            function showSlide(index) {
+                currentIndex = index;
+                const translateValue = -currentIndex * 100;
+                carousel.style.transform = `translateX(${translateValue}%)`;
             }
 
-            function showPrevSlide() {
-                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Прокрутка к предыдущему элементу
-            }
+            prevButton.addEventListener("click", () => {
+                const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                showSlide(prevIndex);
+            });
 
-            prevButton.addEventListener("click", showPrevSlide);
-            nextButton.addEventListener("click", showNextSlide);
+            nextButton.addEventListener("click", () => {
+                const nextIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            });
 
-            // Показать первый слайд при загрузке страницы
-            showCurrentSlide();
+            // Show the initial slide
+            showSlide(currentIndex);
+
+            const navLinks = document.querySelectorAll(".navbar a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    const targetSectionId = this.getAttribute("href");
+                    const targetSection = document.querySelector(targetSectionId);
+
+                    if (targetSection) {
+                        const scrollToPosition = targetSection.offsetTop;
+
+                        window.scrollTo({
+                            top: scrollToPosition,
+                            behavior: "smooth" // Use smooth scrolling animation
+                        });
+                    }
+                });
+            });
         });
     </script>
     

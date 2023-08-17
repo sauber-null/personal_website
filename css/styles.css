@@ -5,7 +5,6 @@ body {
     padding: 0;
     background-color: #e6e6e6;
     color: #000000;
-    /* background-image: url('../images/_DSC5336.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -57,7 +56,6 @@ header {
 }
 
 .about-centered-section {
-    /* display: flex; */
     justify-content: center; /* Центрирование по горизонтали */
     align-items: center; /* Центрирование по вертикали */
     min-height: 100vh; /* Минимальная высота, чтобы секция была по центру экрана */
@@ -98,13 +96,11 @@ nav a {
 
 /* Section styles */
 section {
-    /* width: 500px; */
     padding: 2rem;
     text-align: center;
 }
 
 .carousel-section {
-    /* width: 500px; */
     padding: 20px;
     text-align: center;
 }
@@ -118,7 +114,8 @@ section {
 .carousel-list {
     display: flex;
     transition: transform 0.5s ease;
-    width: 100%;
+    width: 100%; /* Update to match the number of carousel items */
+    transform: translateX(0); /* Set the initial transform to show the first item */
 }
 
 .carousel-item {
@@ -151,10 +148,6 @@ section {
     border: none;
     border-radius: 100%;
 }
-
-/* .prev-button i, .next-button i {
-    margin-right: 5px;
-} */
 
 .next-button {
     order: 3;
