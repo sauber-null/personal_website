@@ -11,6 +11,41 @@
 </head>
 
 <body>
+    <div class="expand-list">
+        <div class="expand-button">
+            <div class="custom-icon">
+                <img src="../images/github.png" alt="GitHub">
+            </div>
+            <div class="custom-icon">
+                <img src="../images/linkedin.png" alt="LinkedIn">
+            </div>
+            <div class="custom-icon">                
+                <img src="../images/leetcode.png" alt="Icon 4">
+            </div>
+            <div class="custom-icon">                
+                <img src="../images/email.png" alt="Mail">
+            </div>
+            <div class="custom-icon">                
+                <img src="../images/phone.png" alt="Phone">
+            </div>
+            <!-- Add more custom icons as needed -->
+        </div>
+        <ul class="expand-menu hidden">
+            <li><a href="https://github.com/sauber-null" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://leetcode.com/zzzzauber/" target="_blank">LeetCode</a></li>
+            <li>
+                <div id="email-placeholder">
+                    <span id="email-link"></span>
+                </div>
+            </li>
+            <li>
+                <div id="phone-placeholder">
+                    <span id="phone-number"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
     <header>
         <!-- Language flags -->
         <div id="language-flags">
@@ -146,48 +181,44 @@
         <p>&copy; 2023 Dmytro Zahoruiko</p>
     </footer>
     <script>
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     const sections = document.querySelectorAll(".animated-section");
-        //     let currentIndex = 0;
-        //     let loading = false;
-
-        //     function showNextSection() {
-        //         if (currentIndex < sections.length) {
-        //             sections[currentIndex].style.opacity = "1";
-        //             sections[currentIndex].style.transform = "translateY(0)";
-        //             currentIndex++;
-        //             loading = false;
-        //         }
-        //     }
-
-        //     function handleScroll() {
-        //         if (!loading && currentIndex < sections.length) {
-        //             const lastSection = sections[currentIndex - 1];
-        //             const lastSectionBottom = lastSection.offsetTop + lastSection.clientHeight;
-        //             const triggerPoint = window.innerHeight;
-
-        //             if (lastSectionBottom - triggerPoint <= window.scrollY) {
-        //                 loading = true;
-        //                 showNextSection();
-        //             }
-        //         }
-        //     }
-
-        //     window.addEventListener("scroll", handleScroll);
-
-        //     showNextSection();
-        // });
-
-        // left-right buttons:
-        // left-right buttons:
+        // animation (carusel and navbar):
         document.addEventListener("DOMContentLoaded", function () {
             const carousel = document.querySelector(".carousel-list");
             const carouselItems = document.querySelectorAll(".carousel-item");
             const prevButton = document.querySelector(".prev-button");
             const nextButton = document.querySelector(".next-button");
+            const expandButton = document.querySelector(".expand-button");
+            const expandMenu = document.querySelector(".expand-menu");
+            const expandList = document.querySelector(".expand-list");
 
+            // Define the phone number parts
+            var countryCode = "+49"; // Your country code
+            var areaCode = "178";     // Your area code
+            var phoneNumber = "4919857"; // Your phone number
+
+            // Combine the parts to form the complete phone number
+            var fullPhoneNumber = countryCode + " " + areaCode + " " + phoneNumber;
+
+            // Get the phone number element and update its content
+            var phoneNumberElement = document.getElementById("phone-number");
+            phoneNumberElement.textContent = fullPhoneNumber;
+
+            // Define the email address parts
+            var username = "d.zahoruiko";
+            var domain = "web.de";
+
+            // Combine the parts to form the complete email address
+            var emailAddress = username + "@" + domain;
+
+            // Get the placeholder element
+            var emailPlaceholder = document.getElementById("email-placeholder");
+
+            // Get the email link and update its content
+            var emailLink = document.getElementById("email-link");
+            emailLink.innerHTML = '<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>';
+            
             let currentIndex = 0;
-
+            
             function showCurrentSlide() {
                 carouselItems.forEach((item, index) => {
                     if (index === currentIndex) {
@@ -197,21 +228,33 @@
                     }
                 });
             }
-
+            
             function showSlide(index) {
                 currentIndex = index;
                 const translateValue = -currentIndex * 100;
                 carousel.style.transform = `translateX(${translateValue}%)`;
             }
-
+            
             prevButton.addEventListener("click", () => {
                 const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
                 showSlide(prevIndex);
             });
-
+            
             nextButton.addEventListener("click", () => {
                 const nextIndex = (currentIndex + 1) % carouselItems.length;
                 showSlide(nextIndex);
+            });
+            
+            // expand the left menu
+            expandButton.addEventListener("click", function () {
+                expandMenu.classList.toggle("hidden");
+                expandButton.classList.toggle("expanded");
+
+                if (expandButton.classList.contains("expanded")) {
+                    expandButton.style.display = "none";
+                } else {
+                    expandButton.style.display = "block";
+                }
             });
 
             // Show the initial slide
@@ -237,6 +280,12 @@
                 });
             });
         });
+        // const expandButton = document.querySelector(".expand-button");
+        // const expandList = document.querySelector(".expand-list");
+
+        // expandButton.addEventListener("click", () => {
+        //     expandList.classList.toggle("active");
+        // });
     </script>
     
     
