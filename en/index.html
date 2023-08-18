@@ -176,6 +176,9 @@
             <p>Reach me via e-mail: <a href="mailto:d.zahoruiko@web.de">d.zahoruiko@web.de</a></p>
             <p>Follow me in Social Media: <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a></p>
         </section>
+        <a href="#" class="home-button" id="homeButton">
+            <i class="fa-solid fa-arrow-up fa-xl" style="color: #000000;"></i>
+        </a>        
     </main>
     <footer>
         <p>&copy; 2023 Dmytro Zahoruiko</p>
@@ -190,6 +193,9 @@
             const expandButton = document.querySelector(".expand-button");
             const expandMenu = document.querySelector(".expand-menu");
             const expandList = document.querySelector(".expand-list");
+            const homeButton = document.getElementById("homeButton");
+            
+            let currentIndex = 0;
 
             // Define the phone number parts
             var countryCode = "+49"; // Your country code
@@ -206,18 +212,57 @@
             // Define the email address parts
             var username = "d.zahoruiko";
             var domain = "web.de";
-
+            
             // Combine the parts to form the complete email address
             var emailAddress = username + "@" + domain;
 
             // Get the placeholder element
             var emailPlaceholder = document.getElementById("email-placeholder");
-
+            
             // Get the email link and update its content
             var emailLink = document.getElementById("email-link");
             emailLink.innerHTML = '<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>';
+
             
-            let currentIndex = 0;
+            // Scroll to top smoothly when the "Home" button is clicked
+            homeButton.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const duration = 200; // Total duration of the animation in milliseconds
+                const start = window.scrollY;
+                const end = 0;
+                let startTime;
+
+                function animateScroll(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+
+                    // Apply easing function for smoother animation (e.g., quadratic easing)
+                    const easingProgress = Math.pow(progress / duration, 2);
+
+                    const newPosition = start + (end - start) * easingProgress;
+                    window.scrollTo(0, newPosition);
+
+                    if (progress < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+
+                requestAnimationFrame(animateScroll);
+            });
+            
+            // Show/hide the "Home" button based on scroll position
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 0) {
+                    homeButton.style.display = "block";
+                } else {
+                    homeButton.style.display = "none";
+                }
+            });
+            // Check scroll position on page load and scroll events
+            // toggleHomeButton();
+            // window.addEventListener("scroll", toggleHomeButton);
+            
             
             function showCurrentSlide() {
                 carouselItems.forEach((item, index) => {
@@ -228,6 +273,8 @@
                     }
                 });
             }
+
+            // carousel navigation
             
             function showSlide(index) {
                 currentIndex = index;
@@ -280,15 +327,7 @@
                 });
             });
         });
-        // const expandButton = document.querySelector(".expand-button");
-        // const expandList = document.querySelector(".expand-list");
-
-        // expandButton.addEventListener("click", () => {
-        //     expandList.classList.toggle("active");
-        // });
     </script>
-    
-    
     
 </body>
 

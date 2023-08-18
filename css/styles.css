@@ -54,6 +54,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
     width: 200px; /* Adjust width as needed */
+    height: 300px;
 }
 
 .expand-menu li {
@@ -171,9 +172,10 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #c8c8c8bb;
+    background-color: #e6e6e6;
     text-align: center;
     z-index: 1000;
+    height: 50px;
 }
 
 nav ul {
@@ -188,11 +190,13 @@ nav li {
 }
 
 nav a {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin: 0;
     text-decoration: none;
     color: rgb(0, 0, 0);
+    /* Add line-height to move the text down */
+    line-height: 50px; /* Adjust this value as needed */
 }
 
 /* Section styles */
@@ -250,6 +254,23 @@ section {
 
 .next-button {
     order: 3;
+}
+
+.home-button {
+    position: fixed;
+    bottom: 65px;
+    right: 65px;
+    display: none;
+    z-index: 1000;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.home-button img {
+    width: 55px; /* Adjust the size of the icon as needed */
+    height: 55px;
+    display: block;
 }
 
 /* Portfolio styles */
