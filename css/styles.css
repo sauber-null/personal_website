@@ -1,6 +1,6 @@
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #e6e6e6;
@@ -11,107 +11,72 @@ body {
     background-attachment: fixed;
 }
 
-/* Center the container */
-/* .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust this to set the height of the centered area
-} */
-
 /* Position the expand list on the left side of the page */
 .expand-list {
     position: fixed;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-color: #33333300;
-    color: #fff;
+    background-color: #e6e6e600;
+    color: #e6e6e600;
     padding: 10px;
+    overflow: hidden;
+    display: flex; /* Display the buttons in a row */
+    flex-direction: column; /* Stack the buttons vertically */
 }
 
-/* Show the list when parent is hovered */
-.expand-list:hover .expand-menu {
-    display: block;
-}
-
-/* Initially hide the list */
-.expand-menu.hidden {
-    display: none;
-}
-
-/* Style for the expanded list */
-.expand-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background-color: #33333329;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    width: 200px; /* Adjust width as needed */
-    height: 300px;
-}
-
-.expand-menu li {
-    margin: 0;
-    padding: 15px;
-}
-
-.custom-icon {
-    width: 40px; /* Set a fixed width for the icon */
-    height: 40px; /* Set a fixed height for the icon */
+/* Style for the expand button */
+.expand-button {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px;
-    /* border-radius: 50%; Make it a circular icon */
-    background-color: #e6e6e6; /* Set background color */
+    background-color: #e6e6e600;
+    padding: 10px;
+    justify-content: left;
+    transition: padding 0.3s ease; /* Add transition for padding property */
+    margin-bottom: 10px; /* Add some space between buttons */
+}
+
+/* Style for the expanded text */
+.expand-list:hover .expand-text {
+    opacity: 1;
+    max-width: 250px; /* Adjust the width as needed */
+    transition: opacity 0.3s ease, max-width 0.3s ease; /* Add transitions */
+}
+
+/* Style for the custom icon */
+.custom-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-right: 10px;
+    background-color: #e6e6e600;
+    border-radius: 50%;
 }
 
 .custom-icon img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Fill the entire space of the icon container */
+    object-fit: contain;
 }
 
-/* Style the expand button icon */
-.expand-button {
-    cursor: pointer;
-    padding: 10px;
+/* Style for the expanded text */
+.expand-text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: opacity 0.3s ease, max-width 0.3s ease; /* Add transitions */
+    color: #343131;
+    font-size: 24px;
 }
+/* 
+.expand-button:hover .expand-text {
+    opacity: 1;
+} */
 
-.expand-menu a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Show the menu when the list is expanded */
-.expand-list.active .expand-menu {
-    display: block;
-}
-
-/* Style for the expand button */
-.expand-button {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column; /* Display the icons vertically */
-    align-items: center;
-    justify-content: center;
-    background-color: #33333300;
-    width: 30px; /* Adjust the width as needed */
-    height: 150px; /* Adjust the height as needed */
-    transition: height 0.5s ease; /* Add transition for height property */
-}
-
-/* hide the left button when the list is expanded */
-.expand-button.expanded {
-    display: none;
-}
 
 header {
     position: relative;
