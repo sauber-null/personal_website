@@ -72,11 +72,6 @@ body {
     color: #343131;
     font-size: 24px;
 }
-/* 
-.expand-button:hover .expand-text {
-    opacity: 1;
-} */
-
 
 header {
     position: relative;
@@ -91,7 +86,6 @@ header {
 
 .photo {
     max-width: 300px;
-
 }
 
 .centered-head {
@@ -141,6 +135,8 @@ nav {
     text-align: center;
     z-index: 1000;
     height: 50px;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul {
@@ -156,12 +152,72 @@ nav li {
 
 nav a {
     font-size: 30px;
+    padding: 10px 20px;
     font-weight: bold;
     margin: 0;
     text-decoration: none;
     color: rgb(0, 0, 0);
     /* Add line-height to move the text down */
     line-height: 50px; /* Adjust this value as needed */
+}
+
+/* Mobile icon styling */
+.mobile-icon {
+    display: none; /* Hide by default for larger screens */
+    cursor: pointer;
+}
+  
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.home-button {
+    position: fixed;
+    bottom: 65px;
+    right: 65px;
+    display: none;
+    z-index: 1000;
+    background-color: #f0f0f0;
+    width: 55px; /* Explicitly set width */
+    height: 55px; /* Explicitly set height */
+    line-height: 55px; /* Vertically center the content */
+    text-align: center; /* Horizontally center the content */
+    border-radius: 50%;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #d7d7d7;
+        width: 80%;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
 /* Section styles */
@@ -177,7 +233,7 @@ section {
 
 .carousel-container {
     overflow: hidden;
-    width: 85%; /* Занимает 50% ширины экрана */
+    width: 75%; /* Занимает 75% ширины экрана */
     margin: 0 auto; /* Центрирование по горизонтали */
 }
 
@@ -206,12 +262,15 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    margin-left: auto; /* Adjust this value to move buttons closer */
+    margin-right: auto; /* Adjust this value to move buttons closer */
+    max-width: 75%; /* Adjust this value if needed */
 }
 
 .prev-button, .next-button {
     padding: 15px;
     cursor: pointer;
-    margin: 0 150px;
+    /* margin: 0 150px; */
     background-color: #f0f0f0;
     border: none;
     border-radius: 100%;
@@ -219,23 +278,6 @@ section {
 
 .next-button {
     order: 3;
-}
-
-.home-button {
-    position: fixed;
-    bottom: 65px;
-    right: 65px;
-    display: none;
-    z-index: 1000;
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 50%;
-}
-
-.home-button img {
-    width: 55px; /* Adjust the size of the icon as needed */
-    height: 55px;
-    display: block;
 }
 
 /* Portfolio styles */
