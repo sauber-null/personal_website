@@ -51,7 +51,7 @@ body {
 
 .tooltip.active {
     display: block;
-    top: 60%;
+    top: 59%;
     left: 55px;
     position: fixed;
 }
@@ -465,7 +465,7 @@ nav a {
     
     .tooltip.active {
         display: block;
-        top: 59%;
+        top: 58%;
         left: 45px;
         position: fixed;
     }

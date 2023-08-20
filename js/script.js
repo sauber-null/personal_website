@@ -40,10 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const phoneButton = document.getElementById("phone-button");
     const phoneTooltip = document.getElementById("phone-tooltip");
+    const tooltipPhoneNumber = document.getElementById("tooltip-phone-number");
 
     phoneButton.addEventListener("click", function(event) {
         event.stopPropagation(); // Prevent click from reaching document
         phoneTooltip.classList.toggle("active");
+        
+        // Generate and insert the obfuscated phone number
+        const obfuscatedPhoneNumber = generateObfuscatedPhoneNumber();
+        tooltipPhoneNumber.textContent = obfuscatedPhoneNumber;
     });
 
     // Close the tooltip when clicking outside the tooltip area
@@ -147,3 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// Function to generate an obfuscated phone number
+function generateObfuscatedPhoneNumber() {
+    const firstPart = "+49"; // Replace with the actual obfuscated digits
+    const secondPart = "178"; // Replace with the actual obfuscated digits
+    const thirdPart = "4919857"; // Replace with the actual obfuscated digits
+
+    return `${firstPart}-${secondPart}-${thirdPart}`;
+}
