@@ -51,7 +51,7 @@ body {
 
 .tooltip.active {
     display: block;
-    top: 59%;
+    top: 60%;
     left: 55px;
     position: fixed;
 }
@@ -196,11 +196,11 @@ nav a {
 }
 
 /* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 768px) {
+@media (max-width: 320px) {
     .mobile-icon {
         display: block; /* Show the hamburger icon on smaller screens */
     }
-
+    
     nav {
         height: auto;
     }
@@ -216,7 +216,7 @@ nav a {
         z-index: 2;
         justify-content: center;
     }
-
+    
     nav a {
         font-size: 20px;
         line-height: 20px; /* Adjust this value as needed */
@@ -231,7 +231,7 @@ nav a {
         text-align: center;
         margin: auto;
     }
-
+    
     header {
         margin-top: 0;
         padding-bottom: 0;
@@ -240,7 +240,109 @@ nav a {
     .centered-head {
         margin-top: 50px;
     }
+    
+    .header-text {
+        margin-top: 110px;
+    }
 
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 5px; /* Space between buttons */
+    }
+
+    .custom-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .expand-list {
+        padding: 2px;
+    }
+
+    .tooltip.active {
+        display: block;
+        top: 56%;
+        left: 35px;
+        position: fixed;
+    }
+    
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .photo {
+        max-width: 150px;
+    }
+    
+    .carousel-navigation {
+        padding: 0px;
+    }
+    
+    .section {
+        padding: 10px;
+        margin-top: 0px;
+        width: 73%;
+    }
+    
+    section.carousel-section {
+        padding: 0px;
+        padding-top: 10px;
+        width: 80%;
+    }
+    
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 425px) {
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    nav {
+        height: auto;
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #e6e6e6;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+    
+    header {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .centered-head {
+        margin-top: 50px;
+    }
+    
     .header-text {
         margin-top: 110px;
     }
@@ -251,46 +353,148 @@ nav a {
     }
 
     .custom-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 7px;
+        width: 25px;
+        height: 25px;
     }
-
+    
     .expand-list {
-        padding: 2px;
+        padding: 4px;
     }
-
+    
     .tooltip.active {
         display: block;
-        top: 56%;
-        left: 30px;
+        top: 57%;
+        left: 37px;
         position: fixed;
-    }
-
+    }    
+    
     .home-button {
         bottom: 20px;
         right: 20px;
     }
-
+    
     .photo {
         max-width: 150px;
     }
-
+    
     .carousel-navigation {
         padding: 0px;
     }
-
+    
     .section {
-        padding: 0px;
+        padding: 10px;
         margin-top: 0px;
-        width: 80%;
+        width: 75%;
     }
-
+    
     section.carousel-section {
         padding: 0px;
+        padding-top: 10px;
         width: 80%;
     }
+    
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
+    }
+}
 
+@media (min-width: 425px) and (max-width: 768px) {
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    nav {
+        height: auto;
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #e6e6e6;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+    
+    header {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .centered-head {
+        margin-top: 50px;
+    }
+    
+    .header-text {
+        margin-top: 110px;
+    }
+    
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 8px; /* Space between buttons */
+    }
+    
+    .custom-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .expand-list {
+        padding: 5px;
+    }
+    
+    .tooltip.active {
+        display: block;
+        top: 59%;
+        left: 45px;
+        position: fixed;
+    }
+    
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .photo {
+        max-width: 150px;
+    }
+    
+    .carousel-navigation {
+        padding: 0px;
+    }
+    
+    .section {
+        padding: 10px;
+        margin-top: 0px;
+        width: 76%;
+    }
+    
+    section.carousel-section {
+        padding: 0px;
+        padding-top: 10px;
+        width: 80%;
+    }
+    
     section.carousel-section .prev-button,
     section.carousel-section .next-button {
         background-color: #f0f0f000;
@@ -308,12 +512,11 @@ section {
     margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: auto;
-
+    
 }
 
 .carousel-section {
     padding: 2rem;
-
     text-align: center;
     background-color: #f4f4f4;
     width: 70%;
