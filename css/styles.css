@@ -18,7 +18,6 @@ body {
     left: 0;
     transform: translateY(-50%);
     background-color: #e6e6e600;
-    color: #e6e6e600;
     padding: 10px;
     overflow: hidden;
     display: flex; /* Display the buttons in a row */
@@ -27,6 +26,7 @@ body {
 
 /* Style for the expand button */
 .expand-button {
+    cursor: pointer;
     display: flex;
     align-items: center;
     background-color: #e6e6e600;
@@ -36,11 +36,24 @@ body {
     margin-bottom: 10px; /* Add some space between buttons */
 }
 
-/* Style for the expanded text */
-.expand-list:hover .expand-text {
-    opacity: 1;
-    max-width: 250px; /* Adjust the width as needed */
-    transition: opacity 0.3s ease, max-width 0.3s ease; /* Add transitions */
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.tooltip.active {
+    display: block;
+    top: 59%;
+    left: 55px;
+    position: fixed;
 }
 
 /* Style for the custom icon */
@@ -61,27 +74,18 @@ body {
     object-fit: contain;
 }
 
-/* Style for the expanded text */
-.expand-text {
-    opacity: 0;
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: opacity 0.3s ease, max-width 0.3s ease; /* Add transitions */
-    color: #343131;
-    font-size: 20px;
-}
 
 header {
     position: relative;
     background-color: #ffffff00;
     text-align: center;
     padding: 2rem 0;
+    margin-top: 50px;
+    padding-bottom: 10px;
 }
 
 .header-text {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .photo {
@@ -89,17 +93,18 @@ header {
 }
 
 .centered-head {
-    position: absolute; /* Устанавливаем позицию как абсолютную */
-    top: 50%; /* Позиционируем заголовок по вертикали */
+    position: absolute;
+    /* top: 50%; */
     left: 50%; /* Позиционируем заголовок по горизонтали */
     transform: translate(-50%, -50%); /* Центрируем по обеим осям */
     margin: 0; /* Убираем отступы */
+    margin-top: 10px;
 }
 
 /* Flags styles */
 #language-flags {
     float: right;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 /* Flags pics styles */
@@ -147,17 +152,19 @@ nav ul {
 
 nav li {
     display: inline;
+    z-index: 1000;
     margin-right: 20px;
 }
 
 nav a {
-    font-size: 30px;
-    padding: 10px 20px;
+    font-size: 22px;
+    padding: 10px 10px;
     font-weight: bold;
     margin: 0;
     text-decoration: none;
     color: rgb(0, 0, 0);
     /* Add line-height to move the text down */
+    z-index: 1000;
     line-height: 50px; /* Adjust this value as needed */
 }
 
@@ -170,7 +177,7 @@ nav a {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(62, 62, 62);
     margin: 5px 0;
 }
 
@@ -193,16 +200,26 @@ nav a {
     .mobile-icon {
         display: block; /* Show the hamburger icon on smaller screens */
     }
+
+    nav {
+        height: auto;
+    }
     
     .nav-link {
         display: none; /* Hide the nav links by default */
         flex-direction: column;
-        background-color: #d7d7d7;
-        width: 80%;
+        background-color: #e6e6e6;
+        width: auto;
         position: absolute;
         top: 100%;
         margin: 0;
         z-index: 2;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
     }
     
     .nav-link.active {
@@ -210,13 +227,74 @@ nav a {
     }
     
     .nav-link li {
-        padding: 15px;
+        padding: 10px;
         text-align: center;
+        margin: auto;
+    }
+
+    header {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .centered-head {
+        margin-top: 50px;
+    }
+
+    .header-text {
+        margin-top: 110px;
+    }
+
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 4px; /* Space between buttons */
+    }
+
+    .custom-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+    }
+
+    .expand-list {
+        padding: 2px;
+    }
+
+    .tooltip.active {
+        display: block;
+        top: 56%;
+        left: 30px;
+        position: fixed;
     }
 
     .home-button {
         bottom: 20px;
         right: 20px;
+    }
+
+    .photo {
+        max-width: 150px;
+    }
+
+    .carousel-navigation {
+        padding: 0px;
+    }
+
+    .section {
+        padding: 0px;
+        margin-top: 0px;
+        width: 80%;
+    }
+
+    section.carousel-section {
+        padding: 0px;
+        width: 80%;
+    }
+
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
     }
 }
 
@@ -227,24 +305,29 @@ section {
     background-color: #f4f4f4;
     width: 70%;
     margin: 2rem auto;
+    margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+
 }
 
 .carousel-section {
-    /* padding: 20px; */
+    padding: 2rem;
+
     text-align: center;
     background-color: #f4f4f4;
     width: 70%;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: auto;
+    position: relative;
 }
 
 .carousel-container {
     overflow: hidden;
-    width: 100%; /* Занимает 75% ширины экрана */
-    margin: 0 auto; /* Центрирование по горизонтали */
-    height: 630px; /* Set the height for the carousel container */
+    width: 100%; /* Set the width for the carousel container */
+    margin: 0 auto; /* Center the carousel container */
+    height: auto; /* Set the height for the carousel container */
 }
 
 .carousel-list {
@@ -252,7 +335,7 @@ section {
     transition: transform 0.5s ease;
     width: 100%; /* Update to match the number of carousel items */
     transform: translateX(0); /* Set the initial transform to show the first item */
-    height: 630px; /* Set the height for the carousel items */
+    height: auto; /* Set the height for the carousel items */
 }
 
 .carousel-item {
@@ -260,7 +343,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 630px; /* Set the height for the carousel items */
+    height: auto; /* Set the height for the carousel items */
 }
 
 .carousel-item.active {
@@ -270,12 +353,13 @@ section {
 }
 
 .carousel-navigation {
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    margin-left: auto; /* Adjust this value to move buttons closer */
-    margin-right: auto; /* Adjust this value to move buttons closer */
+    margin-left: 0px; /* Adjust this value to move buttons closer */
+    margin-right: 0px; /* Adjust this value to move buttons closer */
     max-width: 100%; /* Adjust this value if needed */
 }
 
@@ -286,10 +370,19 @@ section {
     background-color: #f0f0f0;
     border: none;
     border-radius: 100%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.prev-button {
+    left: 0;
 }
 
 .next-button {
     order: 3;
+    right: 0;
 }
 
 /* Portfolio styles */

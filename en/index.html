@@ -14,64 +14,46 @@
 <body>
     <div class="expand-list">
         <div class="expand-button">
-            <div class="custom-icon">
-                <img src="../images/github.png" alt="GitHub">
-            </div>
-            <span class="expand-text">
-                <a href="https://github.com/sauber-null" target="_blank">GitHub</a>
-            </span>
+            <a href="https://github.com/sauber-null" target="_blank">
+                <div class="custom-icon">
+                    <img src="../images/github.png" alt="GitHub">
+                </div>
+            </a>
         </div>
         <div class="expand-button">
-            <div class="custom-icon">                
-                <img src="../images/leetcode.png" alt="LeetCode">
-            </div>
-            <span class="expand-text">
-                <a href="https://leetcode.com/zzzzauber/" target="_blank">LeetCode</a>
-            </span>
+            <a href="https://leetcode.com/zzzzauber/" target="_blank">
+                <div class="custom-icon">                
+                    <img src="../images/leetcode.png" alt="LeetCode">
+                </div>
+            </a>
         </div>
         <div class="expand-button">
-            <div class="custom-icon">
-                <img src="../images/linkedin.png" alt="LinkedIn">
-            </div>
-            <span class="expand-text">
-                <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a>
-            </span>
+            <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">
+                <div class="custom-icon">
+                    <img src="../images/linkedin.png" alt="LinkedIn">
+                </div>
+            </a>
         </div>
         <div class="expand-button">
-            <div class="custom-icon">                
+            <div class="custom-icon email-icon">                
                 <img src="../images/email.png" alt="Mail">
             </div>
-            <span class="expand-text">
-                <div id="email-placeholder">
-                    <span id="email-link"></span>
-                </div>
-            </span>
         </div>
-        <div class="expand-button">
+        <div class="expand-button" id="phone-button">
             <div class="custom-icon">                
                 <img src="../images/phone.png" alt="Phone">
             </div>
-            <span class="expand-text">
-                <div id="phone-placeholder">
-                    <span id="phone-number"></span>
-                </div>
-            </span>
         </div>
     </div>
-    <header>
-        <!-- Language flags -->
-        <div id="language-flags">
-            <a href="../index.html" title="German"><img src="../images/de_flag.png" alt="German Flag"></a>
-        </div>
-        <h1 class="centered-head">Dmytro Zahoruiko</h1>
-        <p class="header-text">Data Scientist/Machine Learning Engineer</p>
-    </header>
+    <div class="tooltip" id="phone-tooltip">
+        <span id="tooltip-phone-number">Your Phone Number</span>
+    </div>
     <nav class="navbar">
         <div class="mobile-icon">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-        </div>
+          </div>
         <ul class="nav-link">
             <li><a href="#about">About me</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -80,6 +62,14 @@
             <li><a href="#contact">Contacts</a></li>
         </ul>
     </nav>
+    <header>
+        <!-- Language flags -->
+        <div id="language-flags">
+            <a href="../index.html" title="German"><img src="../images/de_flag.png" alt="German Flag"></a>
+        </div>
+        <h1 class="centered-head">Dmytro Zahoruiko</h1>
+        <p class="header-text">Data Scientist/Machine Learning Engineer</p>
+    </header>
     <main>
         <section id="about" class="section">
             <h2>About me</h2>
@@ -87,14 +77,14 @@
             <img src="../images/_DSC5336.jpg" alt="My photo" class="photo">
         </section>
         <section id="portfolio" class="carousel-section">
+            <button class="prev-button">
+                <i class="fa-solid fa-arrow-left fa-xl"></i>
+            </button>
+            <button class="next-button">
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
             <h2>Portfolio</h2>
             <div class="carousel-navigation">
-                <button class="prev-button">
-                    <i class="fa-solid fa-arrow-left fa-2xl"></i>
-                </button>
-                <button class="next-button">
-                    <i class="fa-solid fa-arrow-right fa-2xl"></i>
-                </button>
                 <div class="carousel-container">
                     <div class="carousel-list">
                         <div class="carousel-item">
@@ -204,165 +194,6 @@
     <footer>
         <p>&copy; 2023 Dmytro Zahoruiko</p>
     </footer>
-    <script>
-        // animation (carusel and navbar):
-        document.addEventListener("DOMContentLoaded", function () {
-            const carousel = document.querySelector(".carousel-list");
-            const carouselItems = document.querySelectorAll(".carousel-item");
-            const prevButton = document.querySelector(".prev-button");
-            const nextButton = document.querySelector(".next-button");
-            const homeButton = document.getElementById("homeButton");
-            const expandList = document.querySelector(".expand-list");
-            
-            let currentIndex = 0;
-            
-            // top bar menu for mobile
-            const mobileIcon = document.querySelector(".mobile-icon");
-            const navLink = document.querySelector(".nav-link");
-            const body = document.body;
-
-            mobileIcon.addEventListener("click", function () {
-                navLink.classList.toggle("active");
-            });
-
-            // Close the navbar when clicking outside the navbar area
-            body.addEventListener("click", function (event) {
-                if (!navLink.contains(event.target) && !mobileIcon.contains(event.target)) {
-                    navLink.classList.remove("active");
-                }
-            });
-
-            // Prevent clicks inside the navbar from closing the navbar
-            navLink.addEventListener("click", function (event) {
-                event.stopPropagation();
-            });
-            
-
-            // left bar menu
-            expandList.addEventListener("mouseenter", function () {
-                expandList.classList.add("active"); // Add class to show the menu
-            });
-
-            expandList.addEventListener("mouseleave", function () {
-                expandList.classList.remove("active"); // Remove class to hide the menu
-            });
-
-            // Define the phone number parts
-            var countryCode = "+49"; // Your country code
-            var areaCode = "178";     // Your area code
-            var phoneNumber = "4919857"; // Your phone number
-
-            // Combine the parts to form the complete phone number
-            var fullPhoneNumber = countryCode + " " + areaCode + " " + phoneNumber;
-
-            // Get the phone number element and update its content
-            var phoneNumberElement = document.getElementById("phone-number");
-            phoneNumberElement.textContent = fullPhoneNumber;
-
-            // Define the email address parts
-            var username = "d.zahoruiko";
-            var domain = "web.de";
-            
-            // Combine the parts to form the complete email address
-            var emailAddress = username + "@" + domain;
-
-            // Get the placeholder element
-            var emailPlaceholder = document.getElementById("email-placeholder");
-            
-            // Get the email link and update its content
-            var emailLink = document.getElementById("email-link");
-            emailLink.innerHTML = '<a href="mailto:' + emailAddress + '">' + emailAddress + '</a>';
-
-            
-            // Scroll to top smoothly when the "Home" button is clicked
-            homeButton.addEventListener("click", function (event) {
-                event.preventDefault();
-
-                const duration = 200; // Total duration of the animation in milliseconds
-                const start = window.scrollY;
-                const end = 0;
-                let startTime;
-
-                function animateScroll(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    const progress = timestamp - startTime;
-
-                    // Apply easing function for smoother animation (e.g., quadratic easing)
-                    const easingProgress = Math.pow(progress / duration, 2);
-
-                    const newPosition = start + (end - start) * easingProgress;
-                    window.scrollTo(0, newPosition);
-
-                    if (progress < duration) {
-                        requestAnimationFrame(animateScroll);
-                    }
-                }
-
-                requestAnimationFrame(animateScroll);
-            });
-            
-            // Show/hide the "Home" button based on scroll position
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 0) {
-                    homeButton.style.display = "block";
-                } else {
-                    homeButton.style.display = "none";
-                }
-            });            
-            
-            function showCurrentSlide() {
-                carouselItems.forEach((item, index) => {
-                    if (index === currentIndex) {
-                        item.classList.add("active");
-                    } else {
-                        item.classList.remove("active");
-                    }
-                });
-            }
-
-            // carousel navigation
-            
-            function showSlide(index) {
-                currentIndex = index;
-                const translateValue = -currentIndex * 100;
-                carousel.style.transform = `translateX(${translateValue}%)`;
-            }
-            
-            prevButton.addEventListener("click", () => {
-                const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-                showSlide(prevIndex);
-            });
-            
-            nextButton.addEventListener("click", () => {
-                const nextIndex = (currentIndex + 1) % carouselItems.length;
-                showSlide(nextIndex);
-            });
-
-            // Show the initial slide
-            showSlide(currentIndex);
-
-            const navLinks = document.querySelectorAll(".navbar a");
-
-            navLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent default link behavior
-
-                    const targetSectionId = this.getAttribute("href");
-                    const targetSection = document.querySelector(targetSectionId);
-
-                    if (targetSection) {
-                        const scrollToPosition = targetSection.offsetTop;
-
-                        window.scrollTo({
-                            top: scrollToPosition,
-                            behavior: "smooth" // Use smooth scrolling animation
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-    
+    <script src="../js/script.js"></script>
 </body>
-
 </html>
