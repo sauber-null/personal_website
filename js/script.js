@@ -151,6 +151,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    const navLinksColor = document.querySelectorAll(".nav-link a");
+    const sections = document.querySelectorAll("section");
+    
+    // Function to update active link
+    function updateActiveLink() {
+        const middleOfScreen = window.innerHeight / 2;
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= middleOfScreen && rect.bottom >= middleOfScreen) {
+                navLinksColor.forEach(navLink => navLink.classList.remove("active-link"));
+                navLinksColor[index].classList.add("active-link");
+            }
+        });
+    }
+    
+    // Add scroll event listener
+    window.addEventListener("scroll", updateActiveLink);
+    
+    // Update active link on page load
+    updateActiveLink();
 });
 
 

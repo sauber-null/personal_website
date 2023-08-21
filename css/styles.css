@@ -3,12 +3,46 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d3d2d2;
+    /* background-color: #d3d2d2; */
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat;
     color: #000000;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
+    /* background-size: auto; */
+    /* background-repeat: no-repeat; */
+    background-position: left top;
+    background-attachment: scroll;
+}
+
+header {
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 4px rgb(133, 133, 133);
+    color: #dfdfdf;
+
+}
+
+.header-header {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    z-index: 2;
+}
+
+.header-text {
+    margin-top: 0px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#language-flags {
+    position: absolute;
+    top: 15%;
+    right: 0; /* Position on the right */
+    transform: translateY(-50%);
 }
 
 /* Position the expand list on the left side of the page */
@@ -74,31 +108,13 @@ body {
     object-fit: contain;
 }
 
-
-header {
-    position: relative;
-    background-color: #ffffff00;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 50px;
-    padding-bottom: 10px;
-}
-
-.header-text {
-    margin-top: 70px;
-}
-
 .photo {
     max-width: 300px;
 }
 
-.centered-head {
-    position: absolute;
-    /* top: 50%; */
-    left: 50%; /* Позиционируем заголовок по горизонтали */
-    transform: translate(-50%, -50%); /* Центрируем по обеим осям */
-    margin: 0; /* Убираем отступы */
-    margin-top: 10px;
+.photo-carousel {
+    max-width: 80%;
+    max-height: 500px;
 }
 
 /* Flags styles */
@@ -168,6 +184,11 @@ nav a {
     line-height: 50px; /* Adjust this value as needed */
 }
 
+/* Add a class for the active navigation link */
+.nav-link .active-link {
+    color: rgb(255, 117, 48); /* Change the color as desired */
+}
+
 /* Mobile icon styling */
 .mobile-icon {
     display: none; /* Hide by default for larger screens */
@@ -181,325 +202,37 @@ nav a {
     margin: 5px 0;
 }
 
-.home-button {
-    position: fixed;
-    bottom: 65px;
-    right: 65px;
-    display: none;
-    z-index: 1000;
+/* Add styles for the skill elements */
+.skill {
+    cursor: default;
     background-color: #f0f0f0;
-    width: 55px; /* Explicitly set width */
-    height: 55px; /* Explicitly set height */
-    line-height: 55px; /* Vertically center the content */
-    text-align: center; /* Horizontally center the content */
-    border-radius: 50%;
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    flex: 1;
+    display: inline-block;
+    flex-wrap: wrap; /* Wrap to the next line when there's not enough space */
+    gap: 20px; /* Space between skill elements */
+    min-width: 100px; /* Set a minimum width for each skill element */
+    max-width: 80%;
+    text-align: center; /* Center the skills horizontally */
+    transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
 }
 
-/* Media query for smaller screens (e.g., mobile devices) */
-@media (max-width: 320px) {
-    .mobile-icon {
-        display: block; /* Show the hamburger icon on smaller screens */
-    }
-    
-    nav {
-        height: auto;
-    }
-    
-    .nav-link {
-        display: none; /* Hide the nav links by default */
-        flex-direction: column;
-        background-color: #e6e6e6;
-        width: auto;
-        position: absolute;
-        top: 100%;
-        margin: 0;
-        z-index: 2;
-        justify-content: center;
-    }
-    
-    nav a {
-        font-size: 20px;
-        line-height: 20px; /* Adjust this value as needed */
-    }
-    
-    .nav-link.active {
-        display: flex; /* Show the nav links when the menu is active */
-    }
-    
-    .nav-link li {
-        padding: 10px;
-        text-align: center;
-        margin: auto;
-    }
-    
-    header {
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-    
-    .centered-head {
-        margin-top: 50px;
-    }
-    
-    .header-text {
-        margin-top: 110px;
-    }
-
-    /* left bar icons */
-    .expand-button{
-        margin-bottom: 5px; /* Space between buttons */
-    }
-
-    .custom-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    .expand-list {
-        padding: 2px;
-    }
-
-    .tooltip.active {
-        display: block;
-        top: 56%;
-        left: 35px;
-        position: fixed;
-    }
-    
-    .home-button {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .photo {
-        max-width: 150px;
-    }
-    
-    .carousel-navigation {
-        padding: 0px;
-    }
-    
-    .section {
-        padding: 10px;
-        margin-top: 0px;
-        width: 73%;
-    }
-    
-    section.carousel-section {
-        padding: 0px;
-        padding-top: 10px;
-        width: 80%;
-    }
-    
-    section.carousel-section .prev-button,
-    section.carousel-section .next-button {
-        background-color: #f0f0f000;
-        padding: 7px;
-    }
+.skill p {
+    font-size: 15px;
+    margin: 0;
+    font-weight: bold;
 }
 
-@media (min-width: 321px) and (max-width: 425px) {
-    .mobile-icon {
-        display: block; /* Show the hamburger icon on smaller screens */
-    }
-    
-    nav {
-        height: auto;
-    }
-    
-    .nav-link {
-        display: none; /* Hide the nav links by default */
-        flex-direction: column;
-        background-color: #e6e6e6;
-        width: auto;
-        position: absolute;
-        top: 100%;
-        margin: 0;
-        z-index: 2;
-        justify-content: center;
-    }
-    
-    nav a {
-        font-size: 20px;
-        line-height: 20px; /* Adjust this value as needed */
-    }
-    
-    .nav-link.active {
-        display: flex; /* Show the nav links when the menu is active */
-    }
-    
-    .nav-link li {
-        padding: 10px;
-        text-align: center;
-        margin: auto;
-    }
-    
-    header {
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-    
-    .centered-head {
-        margin-top: 50px;
-    }
-    
-    .header-text {
-        margin-top: 110px;
-    }
-
-    /* left bar icons */
-    .expand-button{
-        margin-bottom: 4px; /* Space between buttons */
-    }
-
-    .custom-icon {
-        width: 25px;
-        height: 25px;
-    }
-    
-    .expand-list {
-        padding: 4px;
-    }
-    
-    .tooltip.active {
-        display: block;
-        top: 57%;
-        left: 37px;
-        position: fixed;
-    }    
-    
-    .home-button {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .photo {
-        max-width: 150px;
-    }
-    
-    .carousel-navigation {
-        padding: 0px;
-    }
-    
-    .section {
-        padding: 10px;
-        margin-top: 0px;
-        width: 75%;
-    }
-    
-    section.carousel-section {
-        padding: 0px;
-        padding-top: 10px;
-        width: 80%;
-    }
-    
-    section.carousel-section .prev-button,
-    section.carousel-section .next-button {
-        background-color: #f0f0f000;
-        padding: 7px;
-    }
+.skill:hover {
+    box-shadow: 0 10px 16px rgba(80, 80, 80, 0.366);
 }
 
-@media (min-width: 425px) and (max-width: 768px) {
-    .mobile-icon {
-        display: block; /* Show the hamburger icon on smaller screens */
-    }
-    
-    nav {
-        height: auto;
-    }
-    
-    .nav-link {
-        display: none; /* Hide the nav links by default */
-        flex-direction: column;
-        background-color: #e6e6e6;
-        width: auto;
-        position: absolute;
-        top: 100%;
-        margin: 0;
-        z-index: 2;
-        justify-content: center;
-    }
-    
-    nav a {
-        font-size: 20px;
-        line-height: 20px; /* Adjust this value as needed */
-    }
-    
-    .nav-link.active {
-        display: flex; /* Show the nav links when the menu is active */
-    }
-    
-    .nav-link li {
-        padding: 10px;
-        text-align: center;
-        margin: auto;
-    }
-    
-    header {
-        margin-top: 0;
-        padding-bottom: 0;
-    }
-    
-    .centered-head {
-        margin-top: 50px;
-    }
-    
-    .header-text {
-        margin-top: 110px;
-    }
-    
-    /* left bar icons */
-    .expand-button{
-        margin-bottom: 8px; /* Space between buttons */
-    }
-    
-    .custom-icon {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .expand-list {
-        padding: 5px;
-    }
-    
-    .tooltip.active {
-        display: block;
-        top: 58%;
-        left: 45px;
-        position: fixed;
-    }
-    
-    .home-button {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .photo {
-        max-width: 150px;
-    }
-    
-    .carousel-navigation {
-        padding: 0px;
-    }
-    
-    .section {
-        padding: 10px;
-        margin-top: 0px;
-        width: 76%;
-    }
-    
-    section.carousel-section {
-        padding: 0px;
-        padding-top: 10px;
-        width: 80%;
-    }
-    
-    section.carousel-section .prev-button,
-    section.carousel-section .next-button {
-        background-color: #f0f0f000;
-        padding: 7px;
-    }
+.skills-section {
+    padding-bottom: 50px;
 }
 
 /* Section styles */
@@ -512,7 +245,6 @@ section {
     margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: auto;
-    
 }
 
 .carousel-section {
@@ -619,3 +351,354 @@ footer {
     padding: 1rem 0;
     background-color: #00000000;
 }
+
+.home-button {
+    position: fixed;
+    bottom: 65px;
+    right: 65px;
+    display: none;
+    z-index: 1000;
+    background-color: #f0f0f0;
+    width: 55px; /* Explicitly set width */
+    height: 55px; /* Explicitly set height */
+    line-height: 55px; /* Vertically center the content */
+    text-align: center; /* Horizontally center the content */
+    border-radius: 50%;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 320px) {
+    .header-header {
+        font-size: 40px;
+    }
+    
+    .header-text {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    nav {
+        height: auto;
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #e6e6e6;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 5px; /* Space between buttons */
+    }
+
+    .custom-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .expand-list {
+        padding: 2px;
+    }
+
+    .tooltip.active {
+        display: block;
+        top: 56%;
+        left: 35px;
+        position: fixed;
+    }
+
+    /* Add styles for the skill elements */
+    .skill {
+        padding: 5px;
+        margin: 5px 5px;
+        gap: 10px; /* Space between skill elements */
+        min-width: 55px; /* Set a minimum width for each skill element */
+    }
+
+    .skill p {
+        font-size: 11px;
+    }
+    
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .photo {
+        max-width: 150px;
+    }
+
+    .photo-carousel {
+        max-width: 80%;
+        max-height: 300px;
+    }
+    
+    .carousel-navigation {
+        padding: 0px;
+    }
+    
+    .section {
+        padding: 10px;
+        margin-top: 0px;
+        width: 73%;
+    }
+    
+    section.carousel-section {
+        padding: 0px;
+        padding-top: 10px;
+        width: 80%;
+    }
+    
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 425px) {
+    .header-header {
+        font-size: 55px;
+    }
+    
+    .header-text {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    nav {
+        height: auto;
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #e6e6e6;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 4px; /* Space between buttons */
+    }
+
+    .custom-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .expand-list {
+        padding: 4px;
+    }
+    
+    .tooltip.active {
+        display: block;
+        top: 57%;
+        left: 37px;
+        position: fixed;
+    }
+
+    /* Add styles for the skill elements */
+    .skill {
+        padding: 7px;
+        margin: 5px 5px;
+        gap: 10px; /* Space between skill elements */
+        min-width: 60px; /* Set a minimum width for each skill element */
+    }
+
+    .skill p {
+        font-size: 13px;
+    }
+    
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .photo {
+        max-width: 150px;
+    }
+    
+    .carousel-navigation {
+        padding: 0px;
+    }
+    
+    .section {
+        padding: 10px;
+        margin-top: 0px;
+        width: 75%;
+    }
+    
+    section.carousel-section {
+        padding: 0px;
+        padding-top: 10px;
+        width: 80%;
+    }
+    
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .header-header {
+        font-size: 60px;
+    }
+    
+    .header-text {
+        margin-top: 10px;
+        font-size: 35px;
+    }
+
+    .mobile-icon {
+        display: block; /* Show the hamburger icon on smaller screens */
+    }
+    
+    nav {
+        height: auto;
+    }
+    
+    .nav-link {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column;
+        background-color: #e6e6e6;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        z-index: 2;
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 20px;
+        line-height: 20px; /* Adjust this value as needed */
+    }
+    
+    .nav-link.active {
+        display: flex; /* Show the nav links when the menu is active */
+    }
+    
+    .nav-link li {
+        padding: 10px;
+        text-align: center;
+        margin: auto;
+    }
+    
+    /* left bar icons */
+    .expand-button{
+        margin-bottom: 8px; /* Space between buttons */
+    }
+    
+    .custom-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .expand-list {
+        padding: 5px;
+    }
+    
+    .tooltip.active {
+        display: block;
+        top: 58%;
+        left: 45px;
+        position: fixed;
+    }
+
+    /* Add styles for the skill elements */
+    .skill {
+        padding: 8px;
+        margin: 8px 8px;
+        gap: 13px; /* Space between skill elements */
+        min-width: 65px; /* Set a minimum width for each skill element */
+    }
+
+    .skill p {
+        font-size: 14px;
+    }
+    
+    .home-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .photo {
+        max-width: 150px;
+    }
+    
+    .carousel-navigation {
+        padding: 0px;
+    }
+    
+    .section {
+        padding: 10px;
+        margin-top: 0px;
+        width: 76%;
+    }
+    
+    section.carousel-section {
+        padding: 0px;
+        padding-top: 10px;
+        width: 80%;
+    }
+    
+    section.carousel-section .prev-button,
+    section.carousel-section .next-button {
+        background-color: #f0f0f000;
+        padding: 7px;
+    }
+}
+
