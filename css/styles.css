@@ -56,6 +56,7 @@ header {
     overflow: hidden;
     display: flex; /* Display the buttons in a row */
     flex-direction: column; /* Stack the buttons vertically */
+    z-index: 1100;
 }
 
 /* Style for the expand button */
@@ -68,6 +69,7 @@ header {
     justify-content: left;
     transition: padding 0.3s ease; /* Add transition for padding property */
     margin-bottom: 10px; /* Add some space between buttons */
+    z-index: 1100;
 }
 
 /* Tooltip Styles */
@@ -477,8 +479,8 @@ footer {
 
 .home-button {
     position: fixed;
-    bottom: 65px;
-    right: 65px;
+    bottom: 55px;
+    right: 55px;
     display: none;
     z-index: 1000;
     background-color: #f0f0f0;
@@ -620,6 +622,14 @@ footer {
         background-color: #f0f0f000;
         padding: 7px;
     }
+
+    .home-button {
+        bottom: 12px;
+        right: 2px;
+        width: 28px; /* Explicitly set width */
+        height: 28px; /* Explicitly set height */
+        line-height: 31px; /* Vertically center the content */
+    }
 }
 
 @media (min-width: 321px) and (max-width: 425px) {
@@ -747,6 +757,14 @@ footer {
         background-color: #f0f0f000;
         padding: 7px;
     }
+
+    .home-button {
+        bottom: 12px;
+        right: 2px;
+        width: 28px; /* Explicitly set width */
+        height: 28px; /* Explicitly set height */
+        line-height: 31px; /* Vertically center the content */
+    }
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
@@ -873,6 +891,14 @@ footer {
     section.carousel-section .next-button {
         background-color: #f0f0f000;
         padding: 7px;
+    }
+
+    .home-button {
+        bottom: 22px;
+        right: 5px;
+        width: 33px; /* Explicitly set width */
+        height: 33px; /* Explicitly set height */
+        line-height: 33px; /* Vertically center the content */
     }
 }
 
