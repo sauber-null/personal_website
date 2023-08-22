@@ -210,14 +210,13 @@ nav a {
     margin: 10px 10px;
     border-radius: 5px;
     border: 1px solid #000000;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     flex: 1;
     display: inline-block;
+    text-align: center; /* Center the skills horizontally */
     flex-wrap: wrap; /* Wrap to the next line when there's not enough space */
     gap: 20px; /* Space between skill elements */
     min-width: 100px; /* Set a minimum width for each skill element */
     max-width: 80%;
-    text-align: center; /* Center the skills horizontally */
     transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
 }
 
@@ -245,9 +244,12 @@ section {
     margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: auto;
+    padding-bottom: 60px;
 }
 
 .carousel-section {
+    max-height: 100vh; /* Set maximum height to the height of the viewport */
+    overflow: hidden; /* Hide overflow content if it exceeds the maximum height */
     padding: 2rem;
     text-align: center;
     background-color: #f4f4f4;
@@ -256,10 +258,12 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: auto;
     position: relative;
+    padding-bottom: 70px;
 }
 
 .carousel-container {
-    overflow: hidden;
+    max-height: 100vh; /* Set maximum height to the height of the viewport */
+    overflow: hidden; /* Hide overflow content if it exceeds the maximum height */
     width: 100%; /* Set the width for the carousel container */
     margin: 0 auto; /* Center the carousel container */
     height: auto; /* Set the height for the carousel container */
@@ -328,6 +332,143 @@ section {
 .project img {
     max-width: 100%;
 }
+
+/* .timeline {
+    position: relative;
+    margin: 20px auto;
+    width: 5px;
+    background-color: #000000;
+}
+
+.timeline-event {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff00;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    top: 0;
+    margin-left: 20px;
+} */
+
+/* .timeline-event::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 5px;
+    background-color: #000000;
+    height: calc(100% + 20px);
+} */
+
+.timeline {
+    width: 100%;
+    padding-left: 0px;
+    /* padding-top: 50px; */
+    /* max-width: 800px; */
+    background-color: #f4f4f4;
+
+    /* padding: 100px 50px; */
+    position: relative;
+    /* box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2); */
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 33%;
+    bottom: 0px;
+    width: 4px;
+    background: #ddd;
+}
+
+.timeline:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.entry {
+    width: 100%;
+    clear: both;
+    /* text-align: left; */
+    /* position: relative; */
+}
+
+.entry .title {
+    margin-bottom: .5em;
+    float: left;
+    width: 33%;
+    padding-top: 0px;
+    padding-right: 0px;
+    text-align: right;
+    position: relative;
+}
+
+.entry .title:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 4px solid salmon;
+    background-color: #fff;
+    border-radius: 100%;
+    top: 5px; /* Adjusted top position */
+    transform: translate(-38%, -50%); /* Center the circle horizontally */
+    /* top: 0; */
+    /* right: -6%; */
+    z-index: 99;
+}
+
+.entry .title h3 {
+    margin: 15px;
+    font-size: 120%;
+}
+
+.entry .title p {
+    margin: 15px;
+    font-size: 100%;
+}
+
+.body {
+    margin: 0 0 3em;
+    float: right;
+    width: 55%;
+    right: 0;
+    padding-left: 10px;
+    border: 1px solid #727272;
+    border-radius: 5%;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+/* .entry .body p {
+    line-height: 1.4em;
+} */
+
+/* .entry .body p:first-child {
+    margin-top: 0;
+    font-weight: 400;
+} */
+
+/* .entry .body ul {
+    color: #aaa;
+    padding-left: 0;
+    list-style-type: none;
+} */
+
+/* .entry .body ul li:before {
+    content: "–";
+    margin-right: .5em;
+} */
 
 /* Contact styles */
 #contact {
