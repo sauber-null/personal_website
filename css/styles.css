@@ -257,7 +257,7 @@ section {
 }
 
 .carousel-section {
-    max-height: 100vh; /* Set maximum height to the height of the viewport */
+    max-height: 110vh; /* Set maximum height to the height of the viewport */
     overflow: hidden; /* Hide overflow content if it exceeds the maximum height */
     padding: 2rem;
     text-align: center;
@@ -302,6 +302,7 @@ section {
 
 .carousel-navigation {
     padding: 20px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -326,8 +327,8 @@ section {
 
 .photo-carousel {
     max-width: 80%;
-    max-height: 500px;
-    margin-bottom: 40px;
+    max-height: 75vh;
+    margin-bottom: 30px;
 }
 
 .photo-button-container {
@@ -609,19 +610,32 @@ footer {
     .photo {
         max-width: 150px;
     }
-
-    .photo-carousel {
-        max-width: 80%;
-        max-height: 300px;
-    }
-
+    
     .photo-timeline {
         max-height: 80px;
         max-width: 60px;
     }
+
+    .photo-carousel {
+        max-width: 100%;
+        max-height: 280px;
+        margin-bottom: 10px;
+    }
     
     .carousel-navigation {
         padding: 0px;
+        margin-top: 5px;
+    }
+    
+    .carousel-section h2 {
+        margin: 5px;
+    }
+    
+    .carousel-away-button{
+        font-size: 10px;
+        padding: 5px;
+        margin: 15px 15px;
+        border-radius: 0.5rem;
     }
 
     .entry .title h3 {
@@ -754,9 +768,27 @@ footer {
         max-height: 100px;
         max-width: 100px;
     }
+
+    .photo-carousel {
+        max-width: 100%;
+        max-height: 340px;
+        margin-bottom: 10px;
+    }
     
     .carousel-navigation {
         padding: 0px;
+        margin-top: 5px;
+    }
+    
+    .carousel-section h2 {
+        margin: 5px;
+    }
+    
+    .carousel-away-button{
+        font-size: 14px;
+        padding: 5px;
+        margin: 15px 15px;
+        border-radius: 0.5rem;
     }
 
     .entry .title h3 {
@@ -889,9 +921,26 @@ footer {
         max-height: 120px;
         max-width: 120px;
     }
+
+    .photo-carousel {
+        max-width: 100%;
+        max-height: 400px;
+        margin-bottom: 10px;
+    }
     
     .carousel-navigation {
         padding: 0px;
+        margin-top: 5px;
+    }
+    
+    .carousel-section h2 {
+        margin: 5px;
+    }
+    
+    .carousel-away-button{
+        font-size: 16px;
+        padding: 10px;
+        margin: 20px 20px;
     }
 
     .entry .title h3 {
