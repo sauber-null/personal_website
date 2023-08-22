@@ -152,6 +152,54 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // animation of the career path
+    const entries = document.querySelectorAll('.entry');
+    const bodies = document.querySelectorAll('.body');
+    // const timelines = document.querySelector('.timeline');
+
+    // // Create an Intersection Observer instance
+    // const observerTimeline = new IntersectionObserver((timelines, observerTimeline) => {
+    //     timelines.forEach(timeline => {
+    //     if (timeline.isIntersecting) {
+    //         timeline.target.classList.add('visible');
+    //     }
+    //     });
+    // });
+
+    // // Observe each entry element
+    // timelines.forEach(timeline => {
+    //     observerTimeline.observe(timeline);
+    // });
+
+    // Create an Intersection Observer instance
+    const observerEntry = new IntersectionObserver((entries, observerEntry) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+        });
+    });
+
+    // Observe each entry element
+    entries.forEach(entry => {
+        observerEntry.observe(entry);
+    });
+
+    // Create an Intersection Observer instance
+    const observerBody = new IntersectionObserver((bodies, observerBody) => {
+        bodies.forEach(body => {
+        if (body.isIntersecting) {
+            body.target.classList.add('visible');
+        }
+        });
+    });
+
+    // Observe each entry element
+    bodies.forEach(body => {
+        observerBody.observe(body);
+    });
+
+
     const navLinksColor = document.querySelectorAll(".nav-link a");
     const sections = document.querySelectorAll("section");
     
