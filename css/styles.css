@@ -114,11 +114,6 @@ header {
     max-width: 300px;
 }
 
-.photo-carousel {
-    max-width: 80%;
-    max-height: 500px;
-}
-
 .photo-timeline {
     padding-top: 10px;
     max-height: 180px;
@@ -327,6 +322,42 @@ section {
     position: absolute;
     transform: translateY(-50%);
     z-index: 2;
+}
+
+.photo-carousel {
+    max-width: 80%;
+    max-height: 500px;
+    margin-bottom: 40px;
+}
+
+.photo-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.carousel-away-button{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffab2d;
+    color: #000000;
+    padding: 1rem;
+    margin: 0 40px;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-away-button:hover {
+    background-color: #ff9021;
 }
 
 .prev-button {
