@@ -3,69 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Website</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Connecting styles -->
+    <title>Dmytro Sahoruiko</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Connecting styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Connecting icons -->
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.3.3/dist/scrollreveal.min.js"></script>
 </head>
 <body>
+    <div class="expand-list">
+        <div class="expand-button">
+            <a href="https://github.com/sauber-null" target="_blank">
+                <div class="custom-icon">
+                    <img src="../images/github.png" alt="GitHub">
+                </div>
+            </a>
+        </div>
+        <div class="expand-button">
+            <a href="https://leetcode.com/zzzzauber/" target="_blank">
+                <div class="custom-icon">                
+                    <img src="../images/leetcode.png" alt="LeetCode">
+                </div>
+            </a>
+        </div>
+        <div class="expand-button">
+            <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">
+                <div class="custom-icon">
+                    <img src="../images/linkedin.png" alt="LinkedIn">
+                </div>
+            </a>
+        </div>
+        <div class="expand-button">
+            <div class="custom-icon email-icon">                
+                <img src="../images/email.png" alt="Mail">
+            </div>
+        </div>
+        <div class="expand-button" id="phone-button">
+            <div class="custom-icon">                
+                <img src="../images/phone.png" alt="Phone">
+            </div>
+        </div>
+    </div>
+    <div class="tooltip" id="phone-tooltip">
+        <span id="tooltip-phone-number"></span>
+    </div>
+    <nav class="navbar">
+        <div class="mobile-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        <ul class="nav-link">
+            <li><a href="#about">Über mich</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Kenntnisse</a></li>
+            <li><a href="#education">Lernen und Beruf</a></li>
+            <li><a href="#resume">Lebenslauf</a></li>
+        </ul>
+    </nav>
     <header>
         <!-- Language flags -->
         <div id="language-flags">
             <a href="en/index.html" title="Englisch"><img src="images/en_flag.png" alt="English Flag"></a>
         </div>
-        <h1>Dmytro Sahoruiko</h1>
-        <p>Data Scientist/Machine Learning Engineer</p>  
+        <p class="header-header">Dmytro Sahoruiko</p>
+        <p class="header-text">Software-Entwickler</p> 
     </header>
-    <nav class="navbar">
-        <ul>
-            <!-- <li><a href="en/index.html">Englisch</a></li> -->
-            <li><a href="#about">Über mich</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Kontakte</a></li>
-        </ul>
-    </nav>
     <main>
-        <section id="about">
+        <section id="about" class="section about">
             <h2>Über mich</h2>
-            <p>Hallo! Ich bin Data Scientist/Machine Learning Ingenieur</p>
+            <img src="../images/_DSC5336.jpg" alt="My photo" class="photo">
+            <p>Hallo! Ich bin ein Software-Entwickler, der sich <strong>schnell in alles einarbeiten</strong> kann. Ich beherrsche die Programmiersprache <strong>Python</strong>, habe Kenntnisse in <strong>objektorientierter Programmierung</strong>, beherrsche <strong>SQL</strong> und arbeite versiert mit <strong>Daten: Maschinelles Lernen/Deep Learning, Neuronale Netzwerke, Datenanalyse, Datenvisualisierung</strong>... Ich habe mir fast all diese Fähigkeiten selbst beigebracht.
+                <br>Ich habe sogar diese Webseite in weniger als einer Woche erstellt, obwohl ich anfangs keine Fähigkeiten im Bereich <strong>Webentwicklung</strong> hatte.
+                <br>Ich beherrsche <strong>Englisch auf dem C1-Niveau, Deutsch auf dem B1-Niveau</strong> und spreche <strong>fließend Ukrainisch</strong> und Russisch.
+                <br>Zusätzlich zu meiner schnellen Auffassungsgabe gehören zu meinen Stärken eine außerordentlich hohe <strong>Verantwortungsbereitschaft</strong> (in fast allen Situationen bin ich derjenige, der sich kümmert), sowie <strong>Durchhaltevermögen und Entschlossenheit</strong>. Ich strebe stetig danach, alle Herausforderungen zu meistern, die sich mir in den Weg stellen, ganz gleich, wie anspruchsvoll sie sein mögen.
+                <br>Wenn Sie Interesse daran haben, mich in Ihrem Team zu haben, schreiben Sie mir bitte oder rufen Sie mich während der Arbeitszeit an. Meine Kontaktdaten finden Sie im linken Menü sowie im Lebenslauf am Ende der Seite.</p>
         </section>
-        <section id="portfolio">
+        <section id="portfolio" class="carousel-section">
+            <button class="prev-button">
+                <i class="fa-solid fa-arrow-left fa-xl"></i>
+            </button>
+            <button class="next-button">
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
             <h2>Portfolio</h2>
-            <!-- <img src="project1.jpg" alt="Project 1"> -->
-            <h3>Datenvisualisierung</h3>
-            <p>Projektbeschreibung 1...</p>
-            <div class="project">
-                <div class='tableauPlaceholder' id='viz1692096341366' style='position: relative'><noscript><a href='#'><img
-                                alt='Sales by Day of the Month, Sum and Count '
-                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1_rss.png'
-                                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='GodniyShmot&#47;SalesbyDayoftheMonthSumandCount' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image'
-                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object></div>
-                <script
-                    type='text/javascript'>var divElement = document.getElementById('viz1692096341366'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '95%'; vizElement.style.height = (divElement.offsetWidth * 0.45) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            <div class="carousel-navigation">
+                <div class="carousel-container">
+                    <div class="carousel-list">
+                        <div class="carousel-item">
+                            <h3>Bildunterschriftenerstellung</h3>
+                            <p>Natural Language Processing + Computervision: Generierung von Bildunterschriften</p>
+                            <div class="photo-button-container">
+                                <img src="../images/captioning.png" class="photo-carousel" alt="Image Captioning">
+                                <div class="carousel-button-group">
+                                    <a href="https://github.com/sauber-null/Image_Captioning" target="_blank" class="carousel-away-button">
+                                        GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1TN9JrkuJgaJZWq-u80HyZRm2H-tK_uKk/edit?usp=sharing&ouid=105452570762605421625&rtpof=true&sd=true" target="_blank" class="carousel-away-button">
+                                        Bericht
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Persönliche Webseite</h3>
+                            <p>Von Grund auf selbst erstellt, ohne vorherige Kenntnisse in Webprogrammierung</p>
+                            <div class="photo-button-container">
+                                <img src="../images/website.png" class="photo-carousel" alt="Personal Website">
+                                <div class="carousel-button-group">
+                                    <a href="https://github.com/sauber-null/personal_website" target="_blank" class="carousel-away-button">
+                                        GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Rauschunterdrückender Autoencoder (1)</h3>
+                            <p>Computervision: Umwandlung von handgeschriebenen Grafiken in rauschgedämpfte Schwarz-Weiß-Bilder</p>
+                            <div class="photo-button-container">
+                                <img src="../images/autoencoder1.png" class="photo-carousel" alt="Denoising Autoencoder">
+                                <div class="carousel-button-group">
+                                    <a href="https://github.com/sauber-null/Test_Task_Autoencoder" target="_blank" class="carousel-away-button">
+                                        GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1FeB_oiE4hf7aoJ9GxDk7AvRnm9NA_G4R/edit?usp=sharing&ouid=105452570762605421625&rtpof=true&sd=true" target="_blank" class="carousel-away-button">
+                                        Bericht
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Rauschunterdrückender Autoencoder (2)</h3>
+                            <p>Computervision: Umwandlung von handgeschriebenen Grafiken in rauschgedämpfte Schwarz-Weiß-Bilder</p>
+                            <div class="photo-button-container">
+                                <img src="../images/autoencoder2.png" class="photo-carousel" alt="Denoising Autoencoder">
+                                <div class="carousel-button-group">
+                                    <a href="https://github.com/sauber-null/Test_Task_Autoencoder" target="_blank" class="carousel-away-button">
+                                        GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1FeB_oiE4hf7aoJ9GxDk7AvRnm9NA_G4R/edit?usp=sharing&ouid=105452570762605421625&rtpof=true&sd=true" target="_blank" class="carousel-away-button">
+                                        Bericht
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Klassifizierungsaufgabe für tabellarische Daten</h3>
+                            <p>Weinklassifikation, gelöst durch Anwendung verschiedener mathematischer Methoden und Regressionsmodelle</p>
+                            <div class="photo-button-container">
+                                <img src="../images/tabular.png" class="photo-carousel" alt="Tabular Data Problem">
+                                <div class="carousel-button-group">
+                                    <a href="https://github.com/sauber-null/Regression-on-the-tabular-data" target="_blank" class="carousel-away-button">
+                                        GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                    <a href="https://docs.google.com/document/d/1ZLhtUpuWtQsSAK-tTicEvWyXEySBETwB/edit?usp=sharing&ouid=105452570762605421625&rtpof=true&sd=true" target="_blank" class="carousel-away-button">
+                                        Bericht
+                                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #000000; margin-left: 5px; margin-bottom: 5px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project">
+                                <h3>Datenvisualisierung (1)</h3>
+                                <p>Mit Tableau erstellt, unter Verwendung realer Daten aus meinem Unternehmen</p>
+                                <div class='tableauPlaceholder' id='viz1692096341366' style='position: relative'><noscript><a
+                                    href='#'><img alt='Sales by Day of the Month, Sum and Count '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='site_root' value='' />
+                                        <param name='name' value='GodniyShmot&#47;SalesbyDayoftheMonthSumandCount' />
+                                        <param name='tabs' value='no' />
+                                        <param name='toolbar' value='yes' />
+                                        <param name='static_image'
+                                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthSumandCount&#47;1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='language' value='en-US' />
+                                    </object></div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1692096341366'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.55) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Datenvisualisierung (2)</h3>
+                            <p>Mit Tableau erstellt, unter Verwendung realer Daten aus meinem Unternehmen</p>
+                            <div class="project"><div class='tableauPlaceholder' id='viz1692292929810' style='position: relative'><noscript><a href='#'><img
+                                            alt='Sales by Day of the Month, Average '
+                                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthAverage&#47;1_rss.png'
+                                            style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                    <param name='embed_code_version' value='3' />
+                                    <param name='site_root' value='' />
+                                    <param name='name' value='GodniyShmot&#47;SalesbyDayoftheMonthAverage' />
+                                    <param name='tabs' value='no' />
+                                    <param name='toolbar' value='yes' />
+                                    <param name='static_image'
+                                        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;SalesbyDayoftheMonthAverage&#47;1.png' />
+                                    <param name='animate_transition' value='yes' />
+                                    <param name='display_static_image' value='yes' />
+                                    <param name='display_spinner' value='yes' />
+                                    <param name='display_overlay' value='yes' />
+                                    <param name='display_count' value='yes' />
+                                    <param name='language' value='en-US' />
+                                </object></div>
+                            <script
+                                type='text/javascript'>var divElement = document.getElementById('viz1692292929810'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.55) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Datenvisualisierung (3)</h3>
+                            <p>Mit Tableau erstellt, unter Verwendung realer Daten aus meinem Unternehmen</p>
+                            <div class='tableauPlaceholder' id='viz1692295376012' style='position: relative'><noscript><a href='#'><img
+                                            alt='Sales by Product Type for all time per month (sales sum more than ₴1500) '
+                                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;Sheet1&#47;1_rss.png'
+                                            style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                    <param name='embed_code_version' value='3' />
+                                    <param name='site_root' value='' />
+                                    <param name='name' value='GodniyShmot&#47;Sheet1' />
+                                    <param name='tabs' value='no' />
+                                    <param name='toolbar' value='yes' />
+                                    <param name='static_image'
+                                        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GodniyShmot&#47;Sheet1&#47;1.png' />
+                                    <param name='animate_transition' value='yes' />
+                                    <param name='display_static_image' value='yes' />
+                                    <param name='display_spinner' value='yes' />
+                                    <param name='display_overlay' value='yes' />
+                                    <param name='display_count' value='yes' />
+                                    <param name='language' value='en-US' />
+                                </object></div>
+                            <script
+                                type='text/javascript'>                    var divElement = document.getElementById('viz1692295376012'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Add other projects -->
         </section>
-        <section id="contact">
-            <h2>Kontakte</h2>
-            <p>Kontaktieren Sie mich per E-Mail: <a href="mailto:d.zahoruiko@web.de">d.zahoruiko@web.de</a></p>
-            <p>Folgen Sie mich in den sozialen Medien: <a href="https://www.linkedin.com/in/zzzzauber/" target="_blank">LinkedIn</a></p>
+        <section id="skills" class="section skills-section">
+            <h2>Kenntnisse</h2>
+            <div class="skill">
+                <p>Microsoft Dynamics 365</p>
+            </div>
+            <div class="skill">
+                <p>Python</p>
+            </div>
+            <div class="skill">
+                <p>OOP</p>
+            </div>
+            <div class="skill">
+                <p>SQL</p>
+            </div>
+            <div class="skill">
+                <p>Datenanalyse</p>
+            </div>
+            <div class="skill">
+                <p>Datenvisualisierung</p>
+            </div>
+            <div class="skill">
+                <p>Tableau</p>
+            </div>
+            <div class="skill">
+                <p>Kalkül</p>
+            </div>
+            <div class="skill">
+                <p>Docker</p>
+            </div>
+            <div class="skill">
+                <p>Git</p>
+            </div>
+            <div class="skill">
+                <p>Geschäftsentwicklung</p>
+            </div>
+            <div class="skill">
+                <p>Machine Learning</p>
+            </div>
+            <div class="skill">
+                <p>Neuronale Netze</p>
+            </div>
+            <div class="skill">
+                <p>PyTorch</p>
+            </div>
+            <div class="skill">
+                <p>Natural Language Processing</p>
+            </div>
+            <div class="skill">
+                <p>Computervision</p>
+            </div>
+            <div class="skill">
+                <p>Regressionsmethoden</p>
+            </div>
+            <div class="skill">
+                <p>Pandas</p>
+            </div>
+            <div class="skill">
+                <p>NumPy</p>
+            </div>
+            <div class="skill">
+                <p>Scikit-Learn</p>
+            </div>
+            <div class="skill">
+                <p>Matplotlib</p>
+            </div>
+            <div class="skill">
+                <p>Feature Engineering</p>
+            </div>
+            <div class="skill">
+                <p>Tensorflow</p>
+            </div>
+            <!-- <div class="skill">
+                <p>K-Mean</p>
+            </div>
+            <div class="skill">
+                <p>SVM</p>
+            </div>
+            <div class="skill">
+                <p>PCA</p>
+            </div> -->
         </section>
+        <section id="education" class="section">
+            <h2>Lernen und Beruf</h2>
+            <div class="timeline">
+                <div class="entry">
+                    <div class="title">
+                        <p>01.2023 - Jetzt</p>
+                        <h3>Selbstlernen</h3>
+                        <p><a href="https://www.coursera.org/" target="_blank">Coursera</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/coursera.png" alt="Coursera"  class="photo-timeline">
+                    <li>Deutschsprachkurs B1</li>
+                    <li>ChatGPT Prompt Engineering for Developers</li>
+                    <li>SQL</li>
+                    <li>Tableau</li>
+                    <li>Microsoft Dynamics 365</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>11.2021 - 02.2022</p>
+                        <h3>Trainee KI Ingenieur</h3>
+                        <p><a href="https://mobidev.biz/" target="_blank">MobiDev</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/mobidev.png" alt="MobiDev"  class="photo-timeline">
+                    <p>Erfolgreich und rechtzeitig die 3 Aufgaben gelöst:</p>
+                    <li>CV+NLP Bildbeschriftungsaufgabe auf COCO- und FlickrDatensätzen mit vortrainiertem CNN im Encoder und benutzerdefiniertem RNN im Decoder (implementiert mit PyTorch)</li>
+                    <li>CV-Image-Entrauschen: Bereitstellung einer Pipeline mit einem benutzerdefinierten Autoencoder und einer Dataset-Klasse (implementiert mit PyTorch)</li>
+                    <li>Klassisches Data Science Klassifizierungsproblem mit den tabellarischen Daten (implementiert mit Scikit-Learn und Jupyter Notebook)</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>01.2022 - 02.2022</p>
+                        <h3>Python: Fundamentals and Applications</h3>
+                        <p><a href="https://stepik.org/cert/1389110" target="_blank">Stepik</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/stepik.png" alt="Stepik"  class="photo-timeline">
+                    <li>Datenmodell: Objekte</li>
+                    <li>Klassen</li>
+                    <li>Vererbung</li>
+                    <li>Fehler und Ausnahmen</li>
+                    <li>Namespace</li>
+                    <li>Iteratoren und Generatoren</li>
+                    <li>Dokumentation</li>
+                    <li>API</li>
+                    <li>CSV, JSON</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>06.2021 - 10.2021</p>
+                        <h3>Machine Learning</h3>
+                        <p><a href="https://certificate.ithillel.ua/view/85587811" target="_blank">ITHillel</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/hillel.png" alt="ITHillel"  class="photo-timeline">
+                    <li>NumPy</li>
+                    <li>Scikit-Learn</li>
+                    <li>Keras</li>
+                    <li>Matplotlib</li>
+                    <li>Recurrent Neural Networks: LSTM/GRU</li>
+                    <li>Convolutional Neural Networks</li>
+                    <li>Autoencoders</li>
+                    <li>Clusterbildung</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>12.2020 - 03.2021</p>
+                        <h3>Machine Learning, Andrew Ng</h3>
+                        <p><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">Coursera</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/coursera.png" alt="Coursera"  class="photo-timeline">
+                    <li>Supervised Machine Learning</li>
+                    <li>Regression und Klassifikation</li>
+                    <li>Neuronale Netzwerke</li>
+                    <li>Tensorflow</li>
+                    <li>Unsupervised Learning</li>
+                    <li>Anomalieerkennung</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>11.2020 - 12.2020</p>
+                        <h3>Kalkül</h3>
+                        <p><a href="https://www.khanacademy.org/math/calculus-1" target="_blank">Khan Academy</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/khan.png" alt="Khan Academy" class="photo-timeline">
+                    <li>Grenzwerte und Stetigkeit</li>
+                    <li>Ableitungen</li>
+                    <li>Funktionen</li>
+                    <li>Integrale</li>
+                    <li>Differentialgleichungen</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>08.2017 - 08.2022</p>
+                        <h3>Mitbegründer</h3>
+                        <p><a href="https://www.instagram.com/godniy_shmot/" target="_blank">Godniy Shmot</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/shmot.png" alt="Business" class="photo-timeline">
+                    <p>Meine Frau und ich haben erfolgreich unser eigenes Geschäft zu den TOP-10-Geschäften in unserer Sparte in der Ukraine entwickelt, hart gearbeitet und ständig gewachsen.</p>
+                    <li>Prozess- und Zeitmanagement unter Berücksichtigung der aktuellen Auslastung und Auftragsmenge</li>
+                    <li>Datenanalyse und -visualisierung</li>
+                    <li>Buchhaltung</li>
+                    <li>Kontakt und Verhandlungen mit Lieferanten</li>
+                    <li>Entwicklung einer Strategie für die Geschäftsentwicklung, Analyse von Perspektiven und Wachstumsmöglichkeiten</li>
+                    <li>Verantwortlichkeiten im Bereich Personalbeschaffung</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>05.2016 - 05.2018</p>
+                        <h3>Data Collectors Coordinator</h3>
+                        <p><a href="https://intetics.com/" target="_blank">Intetics</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/intetics.png" alt="Intetics"  class="photo-timeline">
+                    <li>Kontrolle der Datenerfassung durch Außendienstmitarbeiter</li>
+                    <li>Entwicklung der Projektdokumentation</li>
+                    <li>Recherche und Befragung von Außendienstmitarbeitern</li>
+                    <li>Remote Schulung von Mitarbeitern</li>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <p>09.2013 - 06.2017</p>
+                        <h3>Bachelor of Science</h3>
+                        <p><a href="https://khai.edu/en/" target="_blank">Nationale Mykola-Schukowskyj-Universität für Luft- und Raumfahr</a></p>
+                    </div>
+                </div>
+                <div class="body">
+                    <img src="../images/khai.png" alt="University"  class="photo-timeline">
+                    <p style="text-align: center;">Computer Engineering Spezialität</p>
+                </div>
+            </div>
+        </section>
+        <section id="resume" class="section">
+            <h2>Mein relevanter Lebenslauf</h2>
+            <div class="pdf-container">
+                <embed src="../data/Dmytro_Sahoruiko_CV_Software_Engineer_DE.pdf" type="application/pdf" width="80%" height="600px" />
+            </div>
+        </section>
+        <a href="#" class="home-button" id="homeButton">
+            <i class="fa-solid fa-arrow-up fa-xl" style="color: #000000;"></i>
+        </a>  
     </main>
     <footer>
         <p>&copy; 2023 Dmytro Sahoruiko</p>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>
