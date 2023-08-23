@@ -253,7 +253,11 @@ section {
 }
 
 .section h2 {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.about p {
+    text-align: left;
 }
 
 .carousel-section {
@@ -327,7 +331,7 @@ section {
 
 .photo-carousel {
     max-width: 80%;
-    max-height: 75vh;
+    max-height: calc(75vh - 60px);
     margin-bottom: 30px;
 }
 
@@ -341,6 +345,7 @@ section {
     display: flex;
     justify-content: center;
     width: 100%;
+    /* margin-top: 40px; */
 }
 
 .carousel-away-button{
@@ -352,7 +357,7 @@ section {
     background-color: #ffab2d;
     color: #000000;
     padding: 1rem;
-    margin: 0 40px;
+    margin: 0 20px;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
 }
@@ -621,6 +626,11 @@ footer {
         max-height: 280px;
         margin-bottom: 10px;
     }
+
+    .photo-button-container {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     
     .carousel-navigation {
         padding: 0px;
@@ -774,6 +784,11 @@ footer {
         max-height: 340px;
         margin-bottom: 10px;
     }
+
+    .photo-button-container {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     
     .carousel-navigation {
         padding: 0px;
@@ -926,6 +941,11 @@ footer {
         max-width: 100%;
         max-height: 400px;
         margin-bottom: 10px;
+    }    
+
+    .photo-button-container {
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
     
     .carousel-navigation {
